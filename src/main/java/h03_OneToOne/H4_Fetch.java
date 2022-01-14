@@ -32,8 +32,8 @@ public class H4_Fetch {
 	System.out.println();
 	
 //		//2)id=12 olan gunlugun bilgilerini getirelim.
-	H2_Gunluk diary = session.get(H2_Gunluk.class, 12);
-		System.out.println(diary); //H2_Gunluk [id=12, yazilar=Alinin Gunlugu, kisi=Kisi : kisiId=102, kisiAd=Ali Han, kisiYas=9]
+	 
+		System.out.println(session.get(H2_Gunluk.class, 12)); //H2_Gunluk [id=12, yazilar=Alinin Gunlugu, kisi=Kisi : kisiId=102, kisiAd=Ali Han, kisiYas=9]
 //		                            //H2_Gunluk class ından obje: toString de olanlar (id,yazılar)+ kisi (H1_Kisi class ından ) içindeki toStringler(id,ad,yas)
 //		
 		
@@ -55,8 +55,8 @@ public class H4_Fetch {
 	    	String sql1 = "SELECT k.kisi_adi, g.yazilar, k.kisiYas "
 					+ "FROM kisiler k INNER JOIN gunlukler g "
 				+ "ON k.kisi_id = g.kisi_no";
-//////		Object yazıyoruz (H1_Kisi yada H2_Gunluk yazmıyoruz) ikisinden de veri var çünkü
-		
+//////		Object [] yazıyoruz (H1_Kisi yada H2_Gunluk yazmıyoruz) ikisinden de veri var çünkü. ve object array i halinde yazdığımız için 
+		//Arrays.toString(w) şeklinde run ettik
 		
 		List <Object[]> sonucListesi1 = session.createSQLQuery(sql1).getResultList();//sql1 i SQL de create edip sonuç listesini getiriyoruz
 				for(Object [] w: sonucListesi1) {
