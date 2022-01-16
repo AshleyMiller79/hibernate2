@@ -27,7 +27,7 @@ public class H4_Fetch {
 		Transaction tx = session.beginTransaction();
 		
 		
-		// id=111 olan ogrencinin tum kitaplarini listeleyelim.
+		// id=50 olan ogrencinin tum kitaplarini listeleyelim.
 H1_Ogrenci	ogrenci = session.get(H1_Ogrenci.class, 111);
 		
 		for(H2_Kitap w: ogrenci.getKitapListesi()) {
@@ -35,7 +35,7 @@ H1_Ogrenci	ogrenci = session.get(H1_Ogrenci.class, 111);
 		}
 //		
 ////		// id=1002 olan kitap'ın sahibinin bilgilerini listeleyelim.
-	H2_Kitap	kitap = session.get(H2_Kitap.class, 1002);
+	H2_Kitap	kitap = session.get(H2_Kitap.class, 50);
 		System.out.println(kitap.getOgrenci());
 	
 //		// kitaplar ve ogrenciler tablolarindaki ortak olan ogrenci bilgilerini listeleyiniz.
@@ -52,7 +52,7 @@ H1_Ogrenci	ogrenci = session.get(H1_Ogrenci.class, 111);
 	//	//parent tan silince child ı da silindi
 		 session.delete(session.get(H1_Ogrenci.class,111));
 		////child silelim
-		session.delete(session.get(H2_Kitap.class,1003));
+		session.delete(session.get(H2_Kitap.class,50));
 		
 		// HQL ile tum kitaplari silelim.
 		
