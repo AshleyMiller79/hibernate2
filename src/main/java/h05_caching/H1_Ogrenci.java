@@ -38,7 +38,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 	// Child'ı silmeden Parent silmek icin ==>> orphanRemoval=true, cascade = CascadeType.ALL
 	// Getirme islemleri icin ===> fetch = FetchType.EAGER veya fetch = FetchType.LAZY 
 	@OneToMany(mappedBy="ogrenci",orphanRemoval=true, cascade = CascadeType.ALL)
-	private List <H2_Kitap> kitapListesi = new ArrayList<>();
+	private List <H2_Kitap> kitapListesi ;
 
 	public H1_Ogrenci() {
 	
