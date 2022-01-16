@@ -51,7 +51,9 @@ Transaction tx = session.beginTransaction();
 //		
 		
 	tx.commit();	
-		
+	session.close();
+	sf.close();
+
 	}
 
 }

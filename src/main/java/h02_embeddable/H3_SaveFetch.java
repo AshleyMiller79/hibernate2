@@ -50,7 +50,8 @@ public class H3_SaveFetch {
 	
 		
 		//scan.close();
-		
+		sf.close();
+		session.close();
 		
 		
 		
