@@ -6,6 +6,7 @@ package h04_OneToMany;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -28,38 +29,38 @@ public class H4_Fetch {
 		
 		
 		// id=111 olan ogrencinin tum kitaplarini listeleyelim.
-H1_Ogrenci	ogrenci = session.get(H1_Ogrenci.class, 111);
-		
-		for(H2_Kitap w: ogrenci.getKitapListesi()) {
-			System.out.println(w);
-		}
+//H1_Ogrenci	ogrenci = session.get(H1_Ogrenci.class, 111);
 //		
-////		// id=1002 olan kitap'ın sahibinin bilgilerini listeleyelim.
-	H2_Kitap	kitap = session.get(H2_Kitap.class, 1002);
-		System.out.println(kitap.getOgrenci());
-	
-//		// kitaplar ve ogrenciler tablolarindaki ortak olan ogrenci bilgilerini listeleyiniz.
-		String hql1 = "SELECT o.ogrAd, k.isim "
-				+ "FROM H1_Ogrenci o INNER JOIN H2_Kitap k "
-				+ "ON o.ogrId = k.ogrenci";
-		
-		 List <Object[]> sonucListesi = session.createQuery(hql1).getResultList();
-		 sonucListesi.stream().forEach((x) -> System.out.println(Arrays.toString(x)));
+//		for(H2_Kitap w: ogrenci.getKitapListesi()) {
+//			System.out.println(w);
+//		}
+////		
+//////		// id=50 olan kitap'ın sahibinin bilgilerini listeleyelim.
+//	H2_Kitap	kitap = session.get(H2_Kitap.class, 50);
+//		System.out.println(kitap.getOgrenci());
+//	
+////		// kitaplar ve ogrenciler tablolarindaki ortak olan ogrenci bilgilerini listeleyiniz.
+//		String hql1 = "SELECT o.ogrAd, k.isim "
+//				+ "FROM H1_Ogrenci o INNER JOIN H2_Kitap k "
+//				+ "ON o.ogrId = k.ogrenci";
+//		
+//		 List <Object[]> sonucListesi = session.createQuery(hql1).getResultList();
+//		 sonucListesi.stream().forEach((x) -> System.out.println(Arrays.toString(x)));
 		
 		//--------------------------------------------------------------------------
 		//                              SILME ISLEMİ  
 		//--------------------------------------------------------------------------
 	//	//parent tan silince child ı da silindi
-		 session.delete(session.get(H1_Ogrenci.class,111));
-		////child silelim
-		session.delete(session.get(H2_Kitap.class,1003));
-		
+//		 session.delete(session.get(H1_Ogrenci.class,111));
+//		////child silelim
+//		session.delete(session.get(H2_Kitap.class,1003));
+//		
 		// HQL ile tum kitaplari silelim.
 		
-		String hql2 = "DELETE FROM H2_Kitap";
-		int satirSayisi = session.createQuery(hql2).executeUpdate();
-		System.out.println("Silinen Satir Sayisi:"+ satirSayisi);
-		
+//		String hql2 = "DELETE FROM H2_Kitap";
+//		int satirSayisi = session.createQuery(hql2).executeUpdate();
+//		System.out.println("Silinen Satir Sayisi:"+ satirSayisi);
+//		
 //	
 //		
 		
@@ -87,7 +88,7 @@ H1_Ogrenci	ogrenci = session.get(H1_Ogrenci.class, 111);
 		 *   */
 		
  
-	//	System.out.println(session.get(H1_Ogrenci.class, 333));
+		System.out.println(session.get(H1_Ogrenci.class, 333));
 //		
 		tx.commit();
 		sf.close();

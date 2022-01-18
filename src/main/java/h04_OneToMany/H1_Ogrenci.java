@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 
 import javax.persistence.Entity;
-
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -31,7 +31,7 @@ import javax.persistence.Table;
 
 	// Child'ı silmeden Parent silmek icin ==>> orphanRemoval=true, cascade = CascadeType.ALL
 	// Getirme islemleri icin ===> fetch = FetchType.EAGER veya fetch = FetchType.LAZY 
-	@OneToMany(mappedBy="ogrenci",orphanRemoval=true, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="ogrenci",orphanRemoval=true, cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List <H2_Kitap> kitapListesi = new ArrayList<>();
 
 	public H1_Ogrenci() {
@@ -76,14 +76,14 @@ import javax.persistence.Table;
 		this.kitapListesi = kitapListesi;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Ogrenci ogrId=" + ogrId + ", ogrAd=" + ogrAd + ", ogrNot=" + ogrNot;
-//	}
 	@Override
 	public String toString() {
-		return "Ogrenci ogrId=" + ogrId + ", ogrAd=" + ogrAd + ", ogrNot=" + ogrNot + ", kitapListesi="
-				+ kitapListesi + "]";
+		return "Ogrenci ogrId=" + ogrId + ", ogrAd=" + ogrAd + ", ogrNot=" + ogrNot;
 	}
+//	@Override
+//	public String toString() {
+//		return "Ogrenci ogrId=" + ogrId + ", ogrAd=" + ogrAd + ", ogrNot=" + ogrNot + ", kitapListesi="
+//				+ kitapListesi + "]";
+//	}
 	
 }

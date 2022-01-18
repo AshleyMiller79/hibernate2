@@ -26,7 +26,7 @@ public class H4_Fetch {
 		
 		 
 		//1)id=101 olan kişinin bilgilerin get() metodu ile sorgulayalim.
-<<<<<<< HEAD
+
 //		H1_Kisi person = session.get(H1_Kisi.class, 101);
 //	System.out.println(person); //Kisi : kisiId=101, kisiAd=Mehmet Can, kisiYas=10
 ////				
@@ -38,7 +38,7 @@ public class H4_Fetch {
 ////		                            //H2_Gunluk class ından obje: toString de olanlar (id,yazılar)+ kisi (H1_Kisi class ından ) içindeki toStringler(id,ad,yas)
 ////		
 //		
-=======
+
 		H1_Kisi person = session.get(H1_Kisi.class, 101);
 	System.out.println(person); //Kisi : kisiId=101, kisiAd=Mehmet Can, kisiYas=10
 //				
@@ -48,11 +48,7 @@ public class H4_Fetch {
 	 
 		System.out.println(session.get(H2_Gunluk.class, 12)); //H2_Gunluk [id=12, yazilar=Alinin Gunlugu, kisi=Kisi : kisiId=102, kisiAd=Ali Han, kisiYas=9]
 //		                            //H2_Gunluk class ından obje: toString de olanlar (id,yazılar)+ kisi (H1_Kisi class ından ) içindeki toStringler(id,ad,yas)
->>>>>>> ff187bda2b950aa2034597cbd6a20da9a991cd39
-//		
-//		
-<<<<<<< HEAD
-=======
+
 //		// SQL komutlari 
 	    	String sql1 = "SELECT k.kisi_adi, g.yazilar, k.kisiYas "
 					+ "FROM kisiler k INNER JOIN gunlukler g "
@@ -73,7 +69,7 @@ public class H4_Fetch {
 				//**********3. SORUYU HİBERNATE İLE ÇÖZÜNÜZ*****************************
 ////		
 //	//	4)Günlük tablosundan öğrenci adını, günlük adını ve kayıtların öğrenci yasını getir
->>>>>>> ff187bda2b950aa2034597cbd6a20da9a991cd39
+
 //		
 //		//YAVAŞ çalıştığı için tercih edilmez, her satır için ayrı sorgu yolluyor mysql e
 ////		for (int i = 12; i < 15; i++) {
