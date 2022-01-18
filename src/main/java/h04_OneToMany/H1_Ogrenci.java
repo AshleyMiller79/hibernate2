@@ -31,8 +31,13 @@ import javax.persistence.Table;
 
 	// Child'ı silmeden Parent silmek icin ==>> orphanRemoval=true, cascade = CascadeType.ALL
 	// Getirme islemleri icin ===> fetch = FetchType.EAGER veya fetch = FetchType.LAZY 
+<<<<<<< HEAD
 	@OneToMany(mappedBy="ogrenci",orphanRemoval=true, cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List <H2_Kitap> kitapListesi = new ArrayList<>();
+=======
+	@OneToMany(mappedBy="ogrenci",orphanRemoval=true, cascade = CascadeType.ALL)
+	private List <H2_Kitap> kitapListesi ;
+>>>>>>> 1c3553fecbe7b516310685cdb1a56115e8bc2915
 
 	public H1_Ogrenci() {
 	

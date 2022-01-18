@@ -28,6 +28,7 @@ public class H4_Fetch {
 		Transaction tx = session.beginTransaction();
 		
 		
+<<<<<<< HEAD
 		// id=111 olan ogrencinin tum kitaplarini listeleyelim.
 //H1_Ogrenci	ogrenci = session.get(H1_Ogrenci.class, 111);
 //		
@@ -46,15 +47,42 @@ public class H4_Fetch {
 //		
 //		 List <Object[]> sonucListesi = session.createQuery(hql1).getResultList();
 //		 sonucListesi.stream().forEach((x) -> System.out.println(Arrays.toString(x)));
+=======
+		// id=50 olan ogrencinin tum kitaplarini listeleyelim.
+H1_Ogrenci	ogrenci = session.get(H1_Ogrenci.class, 111);
+		
+		for(H2_Kitap w: ogrenci.getKitapListesi()) {
+			System.out.println(w);
+		}
+//		
+////		// id=1002 olan kitap'ın sahibinin bilgilerini listeleyelim.
+	H2_Kitap	kitap = session.get(H2_Kitap.class, 50);
+		System.out.println(kitap.getOgrenci());
+	
+//		// kitaplar ve ogrenciler tablolarindaki ortak olan ogrenci bilgilerini listeleyiniz.
+		String hql1 = "SELECT o.ogrAd, k.isim "
+				+ "FROM H1_Ogrenci o INNER JOIN H2_Kitap k "
+				+ "ON o.ogrId = k.ogrenci";
+		
+		 List <Object[]> sonucListesi = session.createQuery(hql1).getResultList();
+		 sonucListesi.stream().forEach((x) -> System.out.println(Arrays.toString(x)));
+>>>>>>> 1c3553fecbe7b516310685cdb1a56115e8bc2915
 		
 		//--------------------------------------------------------------------------
 		//                              SILME ISLEMİ  
 		//--------------------------------------------------------------------------
 	//	//parent tan silince child ı da silindi
+<<<<<<< HEAD
 //		 session.delete(session.get(H1_Ogrenci.class,111));
 //		////child silelim
 //		session.delete(session.get(H2_Kitap.class,1003));
 //		
+=======
+		 session.delete(session.get(H1_Ogrenci.class,111));
+		////child silelim
+		session.delete(session.get(H2_Kitap.class,50));
+		
+>>>>>>> 1c3553fecbe7b516310685cdb1a56115e8bc2915
 		// HQL ile tum kitaplari silelim.
 		
 //		String hql2 = "DELETE FROM H2_Kitap";
